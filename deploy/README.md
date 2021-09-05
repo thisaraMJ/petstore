@@ -1,20 +1,24 @@
-# Dashboard for Microprofile metrics exposed by Quarkus
+## Deploy Application with Docker-Compose
 
-Available panels:
+### Starting local Grafana and Prometheus
+1. Run `docker-compose up -d`
+2. Open `http://localhost:3000/` and use `admin:admin` credentials
+3. Navigate into `http://localhost:3000/dashboards`
+4. Open `Quarkus Microprofile Metrics` dashboard
+
+### Following Containers will de deployed.
+
+1. Application with Native Binary on `http://localhost:8080`
+2. Prometheus for scraping metrics on `http://localhost:9090`
+3. Grafana Dashboards for Quarkus on `http://localhost:3000`
+
+### Available panels:
 - Uptime
 - Hardware utilization: CPU, mem, threads
 - HTTP counters and timers
 - Database (Agroal): connection pool counters and timers
 - JVM memory and Garbage Collectors
 
-![Grafana Dashboard screenshot](screenshot.png)
+![dashbaord](screenshot.png)
 
-## Usage
-1. Import `src/quarkus-microprofile-metrics.json` into your Grafana.
-2. Adjust variable definitions (namespace, service etc) for your platform.
-3. Enjoy!
-
-## Starting local Grafana and Prometheus
-2. Run `docker-compose up -d`
-3. Open `http://localhost:3000/` and use `admin:admin` credentials
-4. Open `Quarkus Microprofile Metrics` dashboard
+Dashboards are from https://github.com/lwitkowski/quarkus-grafana-dashboard
