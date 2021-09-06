@@ -1,4 +1,4 @@
-# MicroProfile generated Application
+# PetStore Application
 
 ## Introduction
 
