@@ -6,7 +6,8 @@ volumes:
 
 services:
   petstore:
-    image: thisaramj/petstore
+    container_name: petstore
+    image: petstore
     ports:
       - "8080:8080"
     restart: always
@@ -23,8 +24,6 @@ services:
       - POSTGRES_DB=petstoredb
       - POSTGRES_HOST_AUTH_METHOD=trust
     restart: always
-    volumes:
-      - ./migrations.sql:docker-entrypoint-initdb.d/migrations.sql
 
   grafana:
     image: grafana/grafana:7.0.3
