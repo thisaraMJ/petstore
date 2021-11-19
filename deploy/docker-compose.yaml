@@ -7,7 +7,7 @@ volumes:
 services:
   petstore:
     container_name: petstore
-    image: petstore
+    image: thisaramj/petstore
     ports:
       - "8080:8080"
     restart: always
