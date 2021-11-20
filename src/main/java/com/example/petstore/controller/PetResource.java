@@ -117,13 +117,4 @@ public class PetResource {
 	}
 
 
-	@APIResponses(value = {
-			@APIResponse(responseCode = "200", description = "All Pets", content = @Content(mediaType = MediaType.APPLICATION_JSON, schema = @Schema(ref = "Pet"))) })
-	@GET
-	@Path("search/type/{petType}")
-	public Response getPetByType(@PathParam("petType") int petType){
-		List<Pet> pet=Pet.findByAge(petType);
-		return Response.ok(pet).build();
-	}
-
 }
